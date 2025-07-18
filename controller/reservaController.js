@@ -12,8 +12,8 @@ async function crear(req, res) {
 
 async function listar(req, res) {
   try {
-    const reservas = await reservaService.listarReservas();
-    res.status(201).json(reservas);
+    const reservasObtenidas = await reservaService.listarReservas();
+    res.status(201).json(reservasObtenidas);
   } catch (err) {
     console.error('Error al obtener reservas:', err);
     res.status(500).json({ error: 'Error interno al obtener la reserva' });
