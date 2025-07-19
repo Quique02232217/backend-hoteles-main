@@ -136,4 +136,35 @@ router.post("/crear-reservas", reservaController.crear);
  *         description: Error al obtener reservas
  */
 router.get("/obtener-reservas", reservaController.listar);
+
+/**
+ * @swagger
+ * /reserva/estado:
+ *   put:
+ *     summary: Actualiza el estado de una reserva existente.
+ *     tags:
+ *       - Reservas
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               numReserva:
+ *                 type: string
+ *                 example: "HXL034"
+ *               nuevoEstado:
+ *                 type: string
+ *                 enum: [PENDIENTE, CONFIMADO, CHECK_IN, CHECK_OUT, CANCELADO]
+ *                 example: "CONFIMADO"
+ *     responses:
+ *       200:
+ *         description: Estado actualizado correctamente
+ *       400:
+ *         description: Error de validación o estado inválido
+ *       500:
+ *         description: Error del servidor
+ */
+router.put("/estado", reservaController.actualizarEstado);
 module.exports = router;
