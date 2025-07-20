@@ -11,7 +11,7 @@ const reservaController = require("../controller/reservaController");
 
 /**
  * @swagger
- * /reservas/crear-reservas:
+ * /crear-reservas:
  *   post:
  *     summary: Crea una nueva reserva
  *     tags: [Reservas]
@@ -81,7 +81,7 @@ router.post("/crear-reservas", reservaController.crear);
 
 /**
  * @swagger
- * /reservas/obtener-reservas:
+ * /obtener-reservas:
  *   get:
  *     summary: Obtiene todas las reservas realizadas
  *     tags: [Reservas]
@@ -139,7 +139,7 @@ router.get("/obtener-reservas", reservaController.listar);
 
 /**
  * @swagger
- * /reserva/estado:
+ * /estado:
  *   put:
  *     summary: Actualiza el estado de una reserva existente.
  *     tags:
